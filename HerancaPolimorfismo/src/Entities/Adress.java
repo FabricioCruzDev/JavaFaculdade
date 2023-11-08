@@ -1,77 +1,71 @@
 package Entities;
 
-public class Adress {
-  protected String Country;
-  protected String State;
-  protected String City;
-  protected String Street;
-  protected String Number;
-  protected long Zip_code;
-  protected String Complement;
-
-
-    public Adress(String country, String state, String city, String street, String number, long zip_code) {
-    this.Country = country;
-    this.State = state;
-    this.City = city;
-    this.Street = street;
-    this.Number = number;
-    this.Zip_code = zip_code;
-  }
+public class Adress{
+  protected String country;
+  protected String state;
+  protected String city;
+  protected String street;
+  protected String number;
+  protected long zip_code;
+  protected String complement;
 
   public String getCountry() {
-    return this.Country;
+    return country;
   }
 
   public void setCountry(String country) {
-    this.Country = country;
+    this.country = country;
   }
 
   public String getState() {
-    return this.State;
+    return state;
   }
 
   public void setState(String state) {
-    this.State = state;
+    this.state = state;
   }
 
   public String getCity() {
-    return this.City;
+    return city;
   }
 
   public void setCity(String city) {
-    this.City = city;
+    this.city = city;
   }
 
   public String getStreet() {
-    return this.Street;
+    return street;
   }
 
   public void setStreet(String street) {
-    this.Street = street;
+    this.street = street;
   }
 
   public String getNumber() {
-    return this.Number;
+    return number;
   }
 
   public void setNumber(String number) {
-    this.Number = number;
+    this.number = number;
   }
 
   public long getZip_code() {
-    return this.Zip_code;
+    return zip_code;
   }
 
   public void setZip_code(long zip_code) {
-    this.Zip_code = zip_code;
+    this.zip_code = zip_code;
   }
 
   public String getComplement() {
-    return this.Complement;
+    return complement;
   }
 
   public void setComplement(String complement) {
-    this.Complement = complement;
+    this.complement = complement;
+  }
+
+  public String printAdress(){
+    return street + ", " + number + "\nComplemento: " + complement + "\nCEP: " + zip_code;
   }
 }

@@ -3,34 +3,34 @@ package Entities;
 import java.util.Calendar;
 
 public class Person {
-  private String Name;
-  private int Age;
-  private Calendar Birth_date;
+  private String name;
+  private int age;
+  private Calendar birth_date;
   private long CPF;
-  private Adress Adress;
+  private Adress adress;
 
   public Person(String name, Calendar birth_date, long CPF, Adress adress) {
-    this.Name = name;
-    this.Birth_date = birth_date;
+    this.name = name;
+    this.birth_date = birth_date;
     this.CPF = CPF;
-    this.Adress = adress;
-    calculateAge();
+    this.adress = adress;
+    this.age = calculateAge();
   }
 
   protected void setName(String name) {
-    this.Name = name;
+    this.name = name;
   }
 
   public String getName() {
-    return this.Name;
+    return name;
   }
 
   protected void setAge() {
-    this.Age = calculateAge();
+    this.age = calculateAge();
   }
 
   public int getAge() {
-    return this.Age;
+    return age;
   }
 
   protected void setCPF(long CPF) {
@@ -38,21 +38,29 @@ public class Person {
   }
 
   public long getCPF() {
-    return this.CPF;
+    return CPF;
+  }
+
+  public Adress getAdress(){
+    return adress;
   }
 
   protected void setAdress(Adress adress) {
-    this.Adress = adress;
+    this.adress = adress;
   }
 
   public int calculateAge() {
     int lapset;
     Calendar today = Calendar.getInstance();
-    lapset = today.get(Calendar.YEAR) - Birth_date.get(Calendar.YEAR);
-    if ((Birth_date.get(Calendar.MONTH) > today.get(Calendar.MONTH))
-        || (Birth_date.get(Calendar.MONTH) == today.get(Calendar.MONTH) && Birth_date.get(Calendar.DATE) > today.get(Calendar.DATE)))
+    lapset = today.get(Calendar.YEAR) - birth_date.get(Calendar.YEAR);
+    if ((birth_date.get(Calendar.MONTH) > today.get(Calendar.MONTH))
+        || (birth_date.get(Calendar.MONTH) == today.get(Calendar.MONTH) && birth_date.get(Calendar.DATE) > today.get(Calendar.DATE)))
       lapset--;
     return lapset;
+  }
+
+  public String print(){
+    return name + "\nIdade:  " + age + "\nCPF: " + CPF + "\nAdress: \n" + adress.printAdress();
   }
 
 }

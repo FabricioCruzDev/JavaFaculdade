@@ -6,9 +6,8 @@ import Entities.Student;
 public class App {
 
     private static Student student;
-    private static Adress adress;
+    private static Adress adress = new Adress();
     public static void main(String[] args) throws Exception {
-        int age;
         Calendar date = Calendar.getInstance();
         date.set(1980, 10, 23);
         adress.setCountry("Brasil");
@@ -19,11 +18,8 @@ public class App {
         adress.setZip_code(20040901);
         adress.setComplement("Bloco 03 - Ap 20.005");
         student = new Student("Marco Antônio", date, 901564098, adress);
-        student.calculateAge();
-        age = student.getAge();
 
         System.out.println(student.getAge());
-        System.out.println("Teste ok!");
-
+        System.out.println(student.print());
      }
 }
